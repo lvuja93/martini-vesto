@@ -43,19 +43,19 @@ const Home = () => {
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col mb-28 items-center justify-end text-center text-white z-20">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-8">WINTER 2024</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-8">ZIMA 2025</h1>
                     <div className="flex space-x-4">
                         <a
                             href="#"
                             className="bg-white text-black py-4 px-8 rounded text-sm md:text-base font-semibold shadow-md hover:bg-gray-200 transition"
                         >
-                            WOMEN'S NEW ARRIVALS
+                            ŽENSKA KOLEKCIJA
                         </a>
                         <a
                             href="#"
                             className="bg-white text-black py-4 px-8 rounded text-sm md:text-base font-semibold shadow-md hover:bg-gray-200 transition"
                         >
-                            MEN'S NEW ARRIVALS
+                            MUŠKA KOLEKCIJA
                         </a>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ const Home = () => {
                         href="#"
                         className="text-black text-lg font-semibold underline"
                     >
-                        Ženska kolekcija
+                        Ženska revijska odela
                     </a>
                 </div>
 
@@ -91,7 +91,7 @@ const Home = () => {
                         href="#"
                         className="text-black text-lg font-semibold underline"
                     >
-                        Muška kolekcija
+                        Muška revijska odela
                     </a>
                 </div>
             </div>
