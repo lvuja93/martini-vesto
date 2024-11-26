@@ -3,11 +3,12 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home';
 import Navbar from './components/Other Components/Navbar';
+import Footer from './components/Other Components/Footer';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-serif">
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -15,6 +16,7 @@ function App() {
 
 
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -79,10 +79,10 @@ const Navbar = () => {
         <motion.div
             id="navigation"
             style={{ background, height }}
-            className="fixed top-0 w-full  flex items-center justify-end px-6 z-50 transition-all duration-300"
+            className="fixed top-0 w-full  flex items-center justify-start md:justify-end px-6 z-50 transition-all duration-300"
         >
             {/* Navigation items on the left */}
-            <ul className="space-x-4 text-white font-mono hidden md:flex absolute left-6">
+            <ul className="space-x-4 text-white  hidden md:flex absolute left-6">
                 <li>
                     <Link to="/" className="text-lg font-bold hover:underline hover:decoration-[#f5821f]">
                         Početna
