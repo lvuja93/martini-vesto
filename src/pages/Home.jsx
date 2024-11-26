@@ -96,19 +96,51 @@ const Home = () => {
                 </div>
             </div>
             <div className="bg-gray-100 flex items-center justify-center min-h-screen">
-                <div class="bg-white border border-gray-300 p-6 rounded-none shadow-lg w-96">
-                    <h2 class="text-2xl font-semibold mb-4 text-gray-700">Forma za Unos</h2>
+                <div class="bg-white p-6 border border-gray-300 rounded-lg shadow-md w-96">
+                    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Zakazite termin za probu</h2>
                     <form class="space-y-4">
 
-                        <input type="text" placeholder="Ime" class="w-full p-2 border  bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f5821f]" />
-                        <input type="email" placeholder="Email" class="w-full p-2 border  bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f5821f]" />
-                        <input type="datetime-local" placeholder="Izaberite termin"
-                            class="mt-1 block w-full p-2 border text-black bg-white border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                        <input type="text" placeholder="Telefon" class="w-full p-2 border  bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f5821f]" />
-                        <input type="text" placeholder="Adresa" class="w-full p-2 border  bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f5821f]" />
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Ime</label>
+                            <input type="text" id="name" placeholder="Unesite ime"
+                                class="block w-full p-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        </div>
 
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" placeholder="Unesite email"
+                                class="block w-full p-2 bg-gray-100 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        </div>
 
-                        <button type="submit" class="w-full bg-blue-500 text-white font-semibold p-2 rounded-lg hover:bg-blue-600 transition">Pošalji</button>
+                        <div>
+                            <label for="datetime" class="block text-sm font-medium text-gray-700">Datum i vreme</label>
+                            <div class="relative">
+                                <input type="datetime-local" id="datetime"
+                                    class="block w-full p-2 pl-12 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10m-4 8h-2a2 2 0 01-2-2v-4a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2zM5 11h14M5 7h14M5 3h14" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Telefon</label>
+                            <input type="text" id="phone" placeholder="Unesite broj telefona"
+                                class="block w-full p-2 bg-gray-100 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-500 text-white font-semibold p-2 rounded-lg hover:bg-blue-600 transition">
+                            Pošalji
+                        </button>
                     </form>
                 </div>
             </div>
