@@ -95,56 +95,61 @@ const Home = () => {
                     </a>
                 </div>
             </div>
-            <div className="bg-gray-100 flex items-center justify-center min-h-screen">
-                <div class="bg-white p-6 border border-gray-300 rounded-lg shadow-md w-96">
-                    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Zakazite termin za probu</h2>
-                    <form class="space-y-4">
+            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black p-4">
+                <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white rounded-lg shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
+                    <div className="w-full lg:w-1/2 p-5">
+                        <h2 className="text-center text-2xl font-semibold mb-6">Zakazite termin za probu</h2>
+                        <form id="contact-form">
+                            <div className="mb-6 relative text-black">
+                                <input type="text" id="name" name="name" placeholder="Unesite ime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                            </div>
+                            <div className="mb-6 relative">
+                                <input type="email" id="email" name="email" placeholder="Unesite email" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                            </div>
+                            <div className="mb-6 relative">
+                                <input type="datetime-local" id="datetime" name="datetime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                            </div>
+                            <div className="mb-6 relative">
+                                <input type="tel" id="phone" name="phone" placeholder="Unesite broj telefona" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                            </div>
+                            <button type="submit" className="w-full p-3 text-base text-white bg-gray-600 rounded-md hover:bg-gray-700">Pošalji</button>
+                        </form>
+                    </div>
+                    <div className="w-full lg:w-1/2 p-5 flex flex-col space-y-8">
+                        <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
 
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Ime</label>
-                            <input type="text" id="name" placeholder="Unesite ime"
-                                class="block w-full p-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                        </div>
-
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="email" placeholder="Unesite email"
-                                class="block w-full p-2 bg-gray-100 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                        </div>
-
-                        <div>
-                            <label for="datetime" class="block text-sm font-medium text-gray-700">Datum i vreme</label>
-                            <div class="relative">
-                                <input type="datetime-local" id="datetime"
-                                    class="block w-full p-2 pl-12 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="h-5 w-5 text-gray-400"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10m-4 8h-2a2 2 0 01-2-2v-4a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2zM5 11h14M5 7h14M5 3h14" />
-                                    </svg>
-                                </div>
+                            <div className="w-full md:w-5/6">
+                                <h3 className="text-lg font-semibold">Lokacija 1</h3>
+                                <p className="block text-sm font-medium">Adresa: Ulica 1, Grad 1</p>
+                                <p className="block text-sm font-medium">Telefon: +123456789</p>
+                                <p className="block text-sm font-medium">Email: lokacija1@example.com</p>
                             </div>
                         </div>
 
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Telefon</label>
-                            <input type="text" id="phone" placeholder="Unesite broj telefona"
-                                class="block w-full p-2 bg-gray-100 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
+
+                            <div className="w-full md:w-5/6">
+                                <h3 className="text-lg font-semibold">Lokacija 2</h3>
+                                <p className="block text-sm font-medium">Adresa: Ulica 2, Grad 2</p>
+                                <p className="block text-sm font-medium">Telefon: +987654321</p>
+                                <p className="block text-sm font-medium">Email: lokacija2@example.com</p>
+                            </div>
                         </div>
 
-                        <button type="submit"
-                            class="w-full bg-blue-500 text-white font-semibold p-2 rounded-lg hover:bg-blue-600 transition">
-                            Pošalji
-                        </button>
-                    </form>
+                        <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
+
+                            <div className="w-full md:w-5/6">
+                                <h3 className="text-lg font-semibold">Lokacija 3</h3>
+                                <p className="block text-sm font-medium">Adresa: Ulica 3, Grad 3</p>
+                                <p className="block text-sm font-medium">Telefon: +1122334455</p>
+                                <p className="block text-sm font-medium">Email: lokacija3@example.com</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
 
     );
 };
