@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import currentVideo1 from "../assets/cover.mp4";
 import currentVideo2 from "../assets/mobile-cover.mp4";
 import coverPic1 from "../assets/Pariz/cover-pic1.jpg"
 import coverPic2 from "../assets/Pariz/cover-pic-2.jpg"
+import emailjs from 'emailjs-com';
+
 
 // Custom hook for media query handling
 const useMediaQuery = (query) => {
@@ -20,6 +22,42 @@ const useMediaQuery = (query) => {
 };
 
 const Home = () => {
+
+
+    const [showToast, setShowToast] = useState(false);
+
+    const handleSendMessage = () => {
+      // Simulate a successful action
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000); // Hide after 3 seconds
+    };
+  
+  
+    const form = useRef();
+  
+  
+    // const sendEmail = (e) => {
+    //   e.preventDefault();
+  
+    //   emailjs.sendForm(
+    //     'service_9d0y8dw',  // Service ID from EmailJS
+    //     'template_rwgg14t', // Template ID from EmailJS
+    //     form.current,
+    //     '5PBfDkeFBYXq3Po_j'      // User ID from EmailJS
+    //   )
+    //   .then((result) => {
+    //       console.log(result.text);
+    //       // alert("Message sent successfully!");
+    //       handleSendMessage()
+    //   }, (error) => {
+    //       console.log(error.text);
+    //       alert("An error occurred, please try again.");
+    //   });
+  
+    //   e.target.reset();
+    // };
+
+
     const isMobile = useMediaQuery("(max-width: 640px)");
     const currentVideo = isMobile ? currentVideo2 : currentVideo1;
 
@@ -94,25 +132,31 @@ const Home = () => {
                         Muška revijska odela
                     </a>
                 </div>
+
+
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black p-4">
                 <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white rounded-lg shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
                     <div className="w-full lg:w-1/2 p-5">
                         <h2 className="text-center text-2xl font-semibold mb-6">Zakazite termin za probu</h2>
-                        <form id="contact-form">
+                        <form id="contact-form" ref={form} onSubmit={sendEmail}>
                             <div className="mb-6 relative text-black">
-                                <input type="text" id="name" name="name" placeholder="Unesite ime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                                <input type="text" id="name" name="name" placeholder="Unesite ime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
                             </div>
                             <div className="mb-6 relative">
-                                <input type="email" id="email" name="email" placeholder="Unesite email" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                                <input type="email" id="email" name="email" placeholder="Unesite email" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
                             </div>
                             <div className="mb-6 relative">
-                                <input type="datetime-local" id="datetime" name="datetime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                                <input type="datetime-local" id="datetime" name="datetime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
                             </div>
                             <div className="mb-6 relative">
-                                <input type="tel" id="phone" name="phone" placeholder="Unesite broj telefona" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                                <input type="tel" id="phone" name="phone" placeholder="Unesite broj telefona" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
                             </div>
-                            <button type="submit" className="w-full p-3 text-base text-white bg-gray-600 rounded-md hover:bg-gray-700">Pošalji</button>
+                            <div className="mb-6 relative">
+                                <textarea type="tel" id="message" name="message" placeholder="Unesite poruku" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" >
+                                </textarea>
+                            </div>
+                            <button type="submit" className="w-full p-3 text-base text-white bg-[#7D7D7D] rounded-md hover:bg-[#f5821f] hover:text-black transition-all ease-in-out">Pošalji</button>
                         </form>
                     </div>
                     <div className="w-full lg:w-1/2 p-5 flex flex-col space-y-8">
