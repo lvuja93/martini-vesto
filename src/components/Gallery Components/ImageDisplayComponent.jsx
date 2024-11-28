@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
+import pic1 from "../../assets/RevijaOkt19/Black pants and green jacket.jpg"
+import pic2 from "../../assets/RevijaOkt19/Burgundy suit.jpg"
+import pic3 from "../../assets/RevijaOkt19/Elegant black.jpg"
+import pic4 from "../../assets/RevijaOkt19/IMG_4226.jpg"
+import pic5 from "../../assets/RevijaOkt19/IMG_4230.jpg"
+import pic6 from "../../assets/RevijaOkt19/IMG_4267.jpg"
+import pic7 from "../../assets/RevijaOkt19/IMG_4269.jpg"
+import pic8 from "../../assets/RevijaOkt19/IMG_4272.jpg"
+import pic9 from "../../assets/RevijaOkt19/IMG_4281.jpg"
+import pic10 from "../../assets/RevijaOkt19/IMG_4408.jpg"
+import pic11 from "../../assets/RevijaOkt19/IMG_4412.jpg"
+import pic12 from "../../assets/RevijaOkt19/IMG_4418.jpg"
 
 const ImageDisplayComponent = () => {
     const [category, setCategory] = useState('all');
 
     const items = [
-        { id: 1, category: 'coats', imgSrc: 'https://via.placeholder.com/150?text=Coat+1', description: 'Kaput sa odvojivom kapuljačom', price: '7,990 RSD' },
+        { id: 1, category: 'coats', imgSrc: { pic1 }, description: 'Kaput sa odvojivom kapuljačom', price: '7,990 RSD' },
         { id: 2, category: 'jackets', imgSrc: 'https://via.placeholder.com/150?text=Jacket+1', description: 'Duga postavljena jakna', price: '6,590 RSD' },
         { id: 3, category: 'sweaters', imgSrc: 'https://via.placeholder.com/150?text=Sweater+1', description: 'Pletena polo majica', price: '2,750 RSD' },
         { id: 4, category: 'jackets', imgSrc: 'https://via.placeholder.com/150?text=Jacket+2', description: 'Kontrastna jakna', price: '5,390 RSD' },
