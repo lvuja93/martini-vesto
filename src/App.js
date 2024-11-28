@@ -9,7 +9,7 @@ import Gallery from './pages/Gallery';
 
 function App() {
   return (
-    <div className="App font-serif">
+    <div className="App font-serif bg-white">
       <BrowserRouter>
         <Navbar />
         <Routes>

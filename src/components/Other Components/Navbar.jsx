@@ -123,7 +123,7 @@ const Navbar = () => {
             </div>
 
             {/* Menu toggle on the right */}
-            <div onClick={handleNav} className="block md:hidden absolute right-6 mb-4 text-white">
+            <div onClick={handleNav} className="block md:hidden absolute right-6 mb-4 text-[#f5821f]">
                 {nav ? <AiOutlineClose size={33} /> : <AiOutlineMenu size={33} />}
             </div>
 
