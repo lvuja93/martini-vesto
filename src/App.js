@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home';
 import Navbar from './components/Other Components/Navbar';
 import Footer from './components/Other Components/Footer';
+import Gallery from './pages/Gallery';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-
+          <Route path='galerija' element={<Gallery/>} />
 
         </Routes>
         <Footer />

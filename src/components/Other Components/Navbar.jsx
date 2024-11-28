@@ -69,7 +69,7 @@ const Navbar = () => {
         { path: "/", name: "Početna" },
         { path: "/gallery", name: "Muškarci" },
         { path: "/gallery", name: "Žene" },
-        { path: "/gallery", name: "Galerija" },
+        { path: "/galerija", name: "Galerija" },
         { path: "/videos", name: "Lokacije" },
         { path: "/videos", name: "Kontakt" },
     ];
@@ -99,7 +99,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/" className="text-lg font-bold hover:underline hover:decoration-[#f5821f]">
+                    <Link to="/galerija" className="text-lg font-bold hover:underline hover:decoration-[#f5821f]">
                         Galerija
                     </Link>
                 </li>
