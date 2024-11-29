@@ -3,7 +3,7 @@ import currentVideo1 from "../assets/cover.mp4";
 import currentVideo2 from "../assets/mobile-cover.mp4";
 import coverPic1 from "../assets/Pariz/cover-pic1.jpg"
 import coverPic2 from "../assets/Pariz/cover-pic-2.jpg"
-import emailjs from 'emailjs-com';
+import Mailer from "../components/Mailer Components/MailerFrontend"
 
 
 // Custom hook for media query handling
@@ -27,18 +27,18 @@ const Home = () => {
     const [showToast, setShowToast] = useState(false);
 
     const handleSendMessage = () => {
-      // Simulate a successful action
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 3000); // Hide after 3 seconds
+        // Simulate a successful action
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000); // Hide after 3 seconds
     };
-  
-  
+
+
     const form = useRef();
-  
-  
+
+
     // const sendEmail = (e) => {
     //   e.preventDefault();
-  
+
     //   emailjs.sendForm(
     //     'service_9d0y8dw',  // Service ID from EmailJS
     //     'template_rwgg14t', // Template ID from EmailJS
@@ -53,7 +53,7 @@ const Home = () => {
     //       console.log(error.text);
     //       alert("An error occurred, please try again.");
     //   });
-  
+
     //   e.target.reset();
     // };
 
@@ -111,7 +111,7 @@ const Home = () => {
                     />
                     <a
                         href="#"
-                        className="text-black text-lg font-semibold underline"
+                        className="text-black text-2xl font-semibold underline"
                     >
                         Ženska revijska odela
                     </a>
@@ -127,7 +127,7 @@ const Home = () => {
                     />
                     <a
                         href="#"
-                        className="text-black text-lg font-semibold underline"
+                        className="text-black text-2xl font-semibold underline"
                     >
                         Muška revijska odela
                     </a>
@@ -137,27 +137,8 @@ const Home = () => {
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black p-4">
                 <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white rounded-lg shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
-                    <div className="w-full lg:w-1/2 p-5">
-                        <h2 className="text-center text-2xl font-semibold mb-6">Zakazite termin za probu</h2>
-                        <form id="contact-form" ref={form}>
-                            <div className="mb-6 relative text-black">
-                                <input type="text" id="name" name="name" placeholder="Unesite ime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
-                            </div>
-                            <div className="mb-6 relative">
-                                <input type="email" id="email" name="email" placeholder="Unesite email" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
-                            </div>
-                            <div className="mb-6 relative">
-                                <input type="datetime-local" id="datetime" name="datetime" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
-                            </div>
-                            <div className="mb-6 relative">
-                                <input type="tel" id="phone" name="phone" placeholder="Unesite broj telefona" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" />
-                            </div>
-                            <div className="mb-6 relative">
-                                <textarea type="tel" id="message" name="message" placeholder="Unesite poruku" required className="w-full p-3 text-base border border-gray-300 rounded-md min-w-0 focus:outline-none focus:ring-2 focus:ring-[#f5821f] bg-white" >
-                                </textarea>
-                            </div>
-                            <button type="submit" className="w-full p-3 text-base text-white bg-[#7D7D7D] rounded-md hover:bg-[#f5821f] hover:text-black transition-all ease-in-out">Pošalji</button>
-                        </form>
+                    <div className="w-full p-0 max-w-lg ">
+                        <Mailer />
                     </div>
                     <div className="w-full lg:w-1/2 p-5 flex flex-col space-y-8">
                         <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
