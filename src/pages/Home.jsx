@@ -4,6 +4,7 @@ import currentVideo2 from "../assets/mobile-cover.mp4";
 import coverPic1 from "../assets/Pariz/cover-pic1.jpg"
 import coverPic2 from "../assets/Pariz/cover-pic-2.jpg"
 import Mailer from "../components/Mailer Components/MailerFrontend"
+import tailor from "../assets/tailor-in-action-2.png"
 
 
 // Custom hook for media query handling
@@ -85,13 +86,13 @@ const Home = () => {
                     <div className="flex space-x-4 mx-4 md:mx-0">
                         <a
                             href="#"
-                            className="bg-white text-black py-4 px-8  rounded text-sm md:text-base font-semibold shadow-md hover:bg-gray-200 transition"
+                            className="bg-white text-black py-4 px-8  rounded text-sm md:text-base font-semibold shadow-md hover:bg-[#f5821f] hover:text-white transition"
                         >
                             ŽENSKA KOLEKCIJA
                         </a>
                         <a
                             href="#"
-                            className="bg-white text-black py-4 px-8 rounded text-sm md:text-base font-semibold shadow-md hover:bg-gray-200 transition"
+                            className="bg-white text-black py-4 px-8 rounded text-sm md:text-base font-semibold shadow-md hover:bg-[#f5821f] hover:text-white transition"
                         >
                             MUŠKA KOLEKCIJA
                         </a>
@@ -136,41 +137,14 @@ const Home = () => {
 
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black p-4">
-                <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white rounded-lg shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
+                <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white  shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
                     <div className="w-full p-0 max-w-lg ">
                         <h2 className="text-2xl pb-8">Zakazite termin za probu</h2>
                         <Mailer />
                     </div>
                     <div className="w-full lg:w-1/2 p-5 flex flex-col space-y-8">
-                        <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
 
-                            <div className="w-full md:w-5/6">
-                                <h3 className="text-lg font-semibold">Lokacija 1</h3>
-                                <p className="block text-sm font-medium">Adresa: Ulica 1, Grad 1</p>
-                                <p className="block text-sm font-medium">Telefon: +123456789</p>
-                                <p className="block text-sm font-medium">Email: lokacija1@example.com</p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
-
-                            <div className="w-full md:w-5/6">
-                                <h3 className="text-lg font-semibold">Lokacija 2</h3>
-                                <p className="block text-sm font-medium">Adresa: Ulica 2, Grad 2</p>
-                                <p className="block text-sm font-medium">Telefon: +987654321</p>
-                                <p className="block text-sm font-medium">Email: lokacija2@example.com</p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col md:flex-row items-start md:space-x-4 space-y-4 md:space-y-0">
-
-                            <div className="w-full md:w-5/6">
-                                <h3 className="text-lg font-semibold">Lokacija 3</h3>
-                                <p className="block text-sm font-medium">Adresa: Ulica 3, Grad 3</p>
-                                <p className="block text-sm font-medium">Telefon: +1122334455</p>
-                                <p className="block text-sm font-medium">Email: lokacija3@example.com</p>
-                            </div>
-                        </div>
+                        <img src={tailor} className="pt-3"></img>
                     </div>
                 </div>
             </div>

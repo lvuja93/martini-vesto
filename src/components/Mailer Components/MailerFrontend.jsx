@@ -1,30 +1,61 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import Toast from '../Other Components/Toast';
 
 function EmailForm() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
-        date: '',
+        date: null, // Updated to work with DatePicker
         message: '',
     });
 
+    const [showToast, setShowToast] = useState(false);
+    const [isDatePickerOpen, setIsDatePickerOpen] = useState(false); // Toggle for DatePicker visibility
+
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleDateChange = (date) => {
+        setFormData({ ...formData, date });
+        setIsDatePickerOpen(false); // Close DatePicker after selection
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Format the date before sending
+        const formattedDate = formData.date
+            ? formData.date.toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' })
+            : '';
+
+        const emailData = {
+            ...formData,
+            date: formattedDate, // Use the formatted date
+        };
+
         try {
-            const response = await fetch('http://localhost:3003/send-email', {
+            const response = await fetch('http://172.20.10.2:3003/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
 
             if (response.ok) {
-                alert('Poruka je uspešno poslata!');
+                setShowToast(true);
+                setTimeout(() => setShowToast(false), 3000);
+
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    date: null,
+                    message: '',
+                });
             } else {
                 alert('Došlo je do greške prilikom slanja poruke.');
             }
@@ -36,17 +67,11 @@ function EmailForm() {
 
     return (
         <form
-            className="w-full max-w-lg mx-auto p-4 sm:p-6 bg-gray-100 shadow-md rounded-lg"
+            className="w-full max-w-xl mx-auto p-4 sm:p-6 bg-gray-200 shadow-md"
             onSubmit={handleSubmit}
         >
-            {/* Polje za ime */}
+            {/* Name Field */}
             <div className="mb-4">
-                <label
-                    htmlFor="name"
-                    className="block text-sm sm:text-lg font-medium text-gray-700"
-                >
-
-                </label>
                 <input
                     type="text"
                     name="name"
@@ -55,18 +80,12 @@ function EmailForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-[#f5821f] focus:outline-none focus:border-[#f5821f] bg-white rounded-lg"
                 />
             </div>
 
-            {/* Polje za email */}
+            {/* Email Field */}
             <div className="mb-4">
-                <label
-                    htmlFor="email"
-                    className="block text-sm sm:text-lg font-medium text-gray-700"
-                >
-
-                </label>
                 <input
                     type="email"
                     name="email"
@@ -75,18 +94,12 @@ function EmailForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-[#f5821f] focus:outline-none focus:border-[#f5821f] bg-white rounded-lg"
                 />
             </div>
 
-            {/* Polje za broj telefona */}
+            {/* Phone Field */}
             <div className="mb-4">
-                <label
-                    htmlFor="phone"
-                    className="block text-sm sm:text-lg font-medium text-gray-700"
-                >
-
-                </label>
                 <input
                     type="tel"
                     name="phone"
@@ -95,38 +108,39 @@ function EmailForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-[#f5821f] focus:outline-none focus:border-[#f5821f] bg-white rounded-lg"
                 />
             </div>
 
-            {/* Polje za datum */}
-            <div className="mb-4">
-                <label
-                    htmlFor="date"
-                    className="block text-sm sm:text-lg font-medium text-gray-700"
+            {/* Date and Time Picker Button */}
+            <div className="mb-4 relative">
+                <button
+                    type="button"
+                    onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
+                    className="block w-full h-12 px-4 text-left text-sm sm:text-lg border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-2 focus:ring-[#f5821f] focus:outline-none focus:border-[#f5821f]"
                 >
-
-                </label>
-                <input
-                    type="date"
-                    name="date"
-                    id="date"
-                    placeholder="Unesite datum"
-                    value={formData.date}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full h-12 px-4 text-sm sm:text-lg rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white"
-                />
+                    {formData.date
+                        ? `📅 ${formData.date.toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' })}`
+                        : '📅 Izaberite datum i vreme'}
+                </button>
+                {isDatePickerOpen && (
+                    <div className="absolute z-10 mt-2">
+                        <DatePicker
+                            selected={formData.date}
+                            onChange={handleDateChange}
+                            showTimeSelect
+                            timeFormat="HH:mm"
+                            timeIntervals={15}
+                            dateFormat="dd/MM/yyyy HH:mm"
+                            properPlacement="right-start"
+                            inline
+                        />
+                    </div>
+                )}
             </div>
 
-            {/* Polje za poruku */}
+            {/* Message Field */}
             <div className="mb-4">
-                <label
-                    htmlFor="message"
-                    className="block text-sm sm:text-lg font-medium text-gray-700"
-                >
-
-                </label>
                 <textarea
                     name="message"
                     id="message"
@@ -134,16 +148,22 @@ function EmailForm() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full h-32 px-4 py-2 text-sm sm:text-lg rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white resize-none"
+                    className="mt-1 block w-full h-32 px-4 py-2 text-sm sm:text-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-[#f5821f] focus:outline-none focus:border-[#f5821f] bg-white resize-none rounded-lg"
                 />
             </div>
 
             <button
                 type="submit"
-                className="w-full h-12 bg-gray-500 text-white text-sm sm:text-lg font-semibold rounded-lg shadow-sm hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full h-12 bg-white text-black rounded-lg text-sm sm:text-lg font-semibold shadow-sm hover:bg-[#f5821f] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f5821f]"
             >
                 Pošalji
             </button>
+            {showToast && (
+                <Toast
+                    message="Poruka je poslata!"
+                    onClose={() => setShowToast(false)}
+                />
+            )}
         </form>
     );
 }

@@ -9,12 +9,12 @@ import Gallery from './pages/Gallery';
 
 function App() {
   return (
-    <div className="App font-serif bg-white">
+    <div className="App font-sans bg-white overflow-x-hidden">
       <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='galerija' element={<Gallery/>} />
+          <Route path='galerija' element={<Gallery />} />
 
         </Routes>
         <Footer />

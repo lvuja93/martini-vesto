@@ -118,7 +118,7 @@ const Navbar = () => {
             {/* Centered logo */}
             <div className="text-white font-bold text-lg">
                 <Link to="/">
-                    <img src={logo} alt="Logo" className="md:ml-2" width="225" />
+                    <img src={logo} alt="Logo" className="md:ml-2" width="200" />
                 </Link>
             </div>
 
