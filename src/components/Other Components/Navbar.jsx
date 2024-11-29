@@ -9,7 +9,7 @@ const Navbar = () => {
     const background = useTransform(
         scrollY,
         [0, 100],
-        ["rgba(0, 0, 0, 0)", "rgba(125, 125, 125)"]
+        ["rgba(0, 0, 0, 0)", "rgba(209, 213, 219)"]
     );
     const height = useTransform(scrollY, [0, 100], [120, 90]);
 

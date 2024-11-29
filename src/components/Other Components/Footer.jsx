@@ -4,7 +4,7 @@ import logoCrni from "../../assets/logo-crni.png"
 
 const Footer = () => {
     return (
-        <div className='bg-[#7D7D7D]'><footer className="footer bg-[#7D7D7D] text-white p-10 ">
+        <div className='bg-gray-300'><footer className="footer bg-gray-300 text-white p-10 ">
             <nav>
                 <h6 className="text-2xl  font-bold text-black">Services</h6>
                 <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Branding</a>
