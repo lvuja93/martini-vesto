@@ -45,13 +45,13 @@ function EmailForm() {
                     htmlFor="name"
                     className="block text-sm sm:text-lg font-medium text-gray-700"
                 >
-                    Ime
+
                 </label>
                 <input
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Unesite vaše ime"
+                    placeholder="Ime"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -65,13 +65,13 @@ function EmailForm() {
                     htmlFor="email"
                     className="block text-sm sm:text-lg font-medium text-gray-700"
                 >
-                    Email
+
                 </label>
                 <input
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="Unesite vašu email adresu"
+                    placeholder="E-mail"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -85,13 +85,13 @@ function EmailForm() {
                     htmlFor="phone"
                     className="block text-sm sm:text-lg font-medium text-gray-700"
                 >
-                    Broj telefona
+
                 </label>
                 <input
                     type="tel"
                     name="phone"
                     id="phone"
-                    placeholder="Unesite vaš broj telefona"
+                    placeholder="Telefon"
                     value={formData.phone}
                     onChange={handleChange}
                     required
@@ -105,7 +105,7 @@ function EmailForm() {
                     htmlFor="date"
                     className="block text-sm sm:text-lg font-medium text-gray-700"
                 >
-                    Datum
+
                 </label>
                 <input
                     type="date"
@@ -125,12 +125,12 @@ function EmailForm() {
                     htmlFor="message"
                     className="block text-sm sm:text-lg font-medium text-gray-700"
                 >
-                    Poruka
+
                 </label>
                 <textarea
                     name="message"
                     id="message"
-                    placeholder="Unesite vašu poruku"
+                    placeholder="Poruka"
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -140,7 +140,7 @@ function EmailForm() {
 
             <button
                 type="submit"
-                className="w-full h-12 bg-blue-600 text-white text-sm sm:text-lg font-semibold rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full h-12 bg-gray-500 text-white text-sm sm:text-lg font-semibold rounded-lg shadow-sm hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
                 Pošalji
             </button>

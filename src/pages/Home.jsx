@@ -138,6 +138,7 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black p-4">
                 <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white rounded-lg shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
                     <div className="w-full p-0 max-w-lg ">
+                        <h2 className="text-2xl pb-8">Zakazite termin za probu</h2>
                         <Mailer />
                     </div>
                     <div className="w-full lg:w-1/2 p-5 flex flex-col space-y-8">
