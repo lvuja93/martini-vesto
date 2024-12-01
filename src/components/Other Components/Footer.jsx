@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className='bg-gray-300'><footer className="footer bg-gray-300 text-white p-10 ">
             <nav>
-                <h6 className="text-2xl  font-bold text-black">Services</h6>
+                <h6 className="text-2xl  font-bold text-black">Usluge</h6>
                 <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Branding</a>
                 <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Design</a>
                 <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Marketing</a>
@@ -14,16 +14,16 @@ const Footer = () => {
             </nav>
             <nav>
                 <h6 className="text-2xl font-bold text-black">Kompanija</h6>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">About us</a>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Contact</a>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Jobs</a>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Press kit</a>
+                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">O nama</a>
+                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Kontakt</a>
+                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Karijera</a>
+
             </nav>
             <nav>
                 <h6 className="text-2xl  font-bold text-black">Kontakt</h6>
                 <a className="link link-hover">Instagram</a>
                 <a className="link link-hover">Facebook</a>
-                <a className="link link-hover">Mail</a>
+                <a className="link link-hover">E-Mail</a>
             </nav>
             <nav className="flex justify-center w-full mt-8 scale-[0.8]">
                 <aside className="flex flex-col items-center text-center">

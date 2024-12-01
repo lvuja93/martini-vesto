@@ -70,7 +70,7 @@ const Navbar = () => {
         { path: "/gallery", name: "Muškarci" },
         { path: "/gallery", name: "Žene" },
         { path: "/galerija", name: "Galerija" },
-        { path: "/videos", name: "Lokacije" },
+        { path: "/lokacija", name: "Lokacije" },
         { path: "/videos", name: "Kontakt" },
     ];
     const location = useLocation();
@@ -104,7 +104,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/gallery" className="text-lg font-bold hover:underline hover:decoration-[#f5821f]">
+                    <Link to="/lokacija" className="text-lg font-bold hover:underline hover:decoration-[#f5821f]">
                         Lokacije
                     </Link>
                 </li>

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Navbar from './components/Other Components/Navbar';
 import Footer from './components/Other Components/Footer';
 import Gallery from './pages/Gallery';
+import Location from './pages/Location';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='galerija' element={<Gallery />} />
+          <Route path='lokacija' element={<Location />} />
 
         </Routes>
         <Footer />
