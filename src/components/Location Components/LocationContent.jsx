@@ -83,11 +83,11 @@ const Map = () => {
                                 </h2>
                                 {/* Address */}
                                 <p className="text-sm">
-                                    <strong>Address:</strong> {location.address}
+                                    <strong>Adresa:</strong> {location.address}
                                 </p>
                                 {/* Email */}
                                 <p className="text-sm">
-                                    <strong>Email:</strong>{" "}
+                                    <strong>E-mail:</strong>{" "}
                                     <a
                                         href={`mailto:${location.email}`}
                                         className="text-blue-500"
@@ -97,7 +97,7 @@ const Map = () => {
                                 </p>
                                 {/* Phone */}
                                 <p className="text-sm">
-                                    <strong>Phone:</strong>{" "}
+                                    <strong>Telefon:</strong>{" "}
                                     <a
                                         href={`tel:${location.phone}`}
                                         className="text-blue-500"
