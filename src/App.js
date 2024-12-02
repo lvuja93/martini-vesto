@@ -7,6 +7,8 @@ import Footer from './components/Other Components/Footer';
 import Gallery from './pages/Gallery';
 import Location from './pages/Location';
 import Kontakt from './pages/Kontakt';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 function App() {
