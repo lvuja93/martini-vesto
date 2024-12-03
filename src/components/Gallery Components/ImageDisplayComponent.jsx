@@ -115,7 +115,7 @@ const ImageDisplayComponent = () => {
     return (
       <div
         onClick={onClick}
-        className="absolute top-1/2 right-11 transform -translate-y-1/2 w-12 h-12  opacity-0 group-hover:opacity-100 rounded-full flex justify-center items-center cursor-pointer z-10 transition-all duration-300 ease-in-out shadow-lg hidden md:flex"
+        className="absolute top-1/2 right-7 transform -translate-y-1/2 w-12 h-12  opacity-0 group-hover:opacity-100 rounded-full flex justify-center items-center cursor-pointer z-10 transition-all duration-300 ease-in-out shadow-lg hidden md:flex"
       >
         <span className="text-[#f5821f] mb-1 text-5xl font-bold">{'>'}</span>
       </div>
@@ -126,7 +126,7 @@ const ImageDisplayComponent = () => {
     return (
       <div
         onClick={onClick}
-        className="absolute top-1/2 left-11 transform -translate-y-1/2 w-12 h-12 opacity-0 group-hover:opacity-100 rounded-full flex justify-center items-center cursor-pointer z-10 transition-all duration-300 ease-in-out shadow-lg hidden md:flex"
+        className="absolute top-1/2 left-7 transform -translate-y-1/2 w-12 h-12 opacity-0 group-hover:opacity-100 rounded-full flex justify-center items-center cursor-pointer z-10 transition-all duration-300 ease-in-out shadow-lg hidden md:flex"
       >
         <span className="text-[#f5821f] mb-1 text-5xl font-bold">{'<'}</span>
       </div>
@@ -162,7 +162,7 @@ const ImageDisplayComponent = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-6 min-h-[600px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 min-h-[600px]">
         {items
           .filter((item) => category === "all" || item.category === category)
           .map((item) => (
@@ -173,14 +173,14 @@ const ImageDisplayComponent = () => {
                     <img
                       src={img}
                       alt={`${item.description} ${index}`}
-                      className="w-[400px] h-[500px] md:h-[600px] object-cover mx-auto"
+                      className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto"
                       loading="lazy"
                     />
                   </div>
                 ))}
               </Slider>
-              <div className="mt-16 text-xl font-bold">{item.description}</div>
-              <div className="mt-2 text-lg">{item.price}</div>
+              <div className="mt-14 text-xl font-bold">{item.description}</div>
+           
             </div>
           ))}
       </div>

@@ -12,13 +12,7 @@ const Footer = () => {
                 <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Marketing</a>
                 <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Advertisement</a>
             </nav>
-            <nav>
-                <h6 className="text-2xl font-bold text-black">Kompanija</h6>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">O nama</a>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Kontakt</a>
-                <a className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Karijera</a>
-
-            </nav>
+     
             <nav>
                 <h6 className="text-2xl  font-bold text-black">Kontakt</h6>
                 <a className="link link-hover">Instagram</a>
