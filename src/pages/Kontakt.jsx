@@ -13,20 +13,28 @@ const Kontakt = () => {
                 <div className="w-full lg:w-1/2 py-24 flex flex-col justify-center items-start md:pl-36 font-medium space-y-8 rounded-xl text-xl">
 
                     <div className='flex items-center space-x-4 p-1 rounded-md hover:text-[#f5821f] transition duration-300 cursor-pointer'>
+                    <a href="https://www.instagram.com/martinivestoofficial/" target="_blank" rel="noopener noreferrer" className="hover:text-[#f5821f] transition duration-300 cursor-pointer">
                         <FaInstagram className='w-8 h-8' />
                         <p>@martinivestoofficial</p>
+                    </a>    
                     </div>
                     <div className='flex items-center space-x-4 p-1 rounded-md hover:text-[#f5821f] transition duration-300 cursor-pointer'>
+                    <a href="https://www.facebook.com/martinivesto.gr" target="_blank" rel="noopener noreferrer" className="hover:text-[#f5821f] transition duration-300 cursor-pointer">
                         <FaFacebook className='w-8 h-8' />
                         <p>Martini Vesto</p>
+                    </a>    
                     </div>
                     <div className='flex items-center space-x-4 pl-1 rounded-md hover:text-[#f5821f] transition duration-300 cursor-pointer'>
+                    <a href="mailto:info@martini-vesto.com" className="hover:text-[#f5821f] transition duration-300 cursor-pointer">
                         <FaEnvelope className='w-8 h-8' />
                         <p>info@martini-vesto.com</p>
+                    </a>
                     </div>
                     <div className='flex items-center space-x-4 p-1 rounded-md hover:text-[#f5821f] transition duration-300 cursor-pointer'>
-                        <FaPhoneAlt className='w-8 h-8' />
-                        <p>+381 16 215827</p>
+                        <a href="tel:+38116215827" className='flex items-center space-x-4'>
+                            <FaPhoneAlt className='w-8 h-8' />
+                            <p>+381 16 215827</p>
+                        </a>
                     </div>
                 </div>
             </div>

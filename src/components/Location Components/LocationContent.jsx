@@ -71,7 +71,7 @@ const Map = () => {
     return (
         <div className="flex flex-col md:flex-row h-screen bg-gray-300">
             {/* Sidebar */}
-            <div className="w-full md:w-1/4 mt-16 md:mt-28 bg-gray-100 overflow-y-auto text-gray-700">
+            <div className="w-full md:w-1/4 mt-28 md:mt-28 bg-gray-100 overflow-y-auto text-gray-700">
                 <ul className="p-4">
                     {locations.map((location) => (
                         <li
