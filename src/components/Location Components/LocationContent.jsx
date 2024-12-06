@@ -228,6 +228,7 @@ const Map = () => {
                             <button
                                 onClick={() => window.open(location.link)}
                                 className="mt-2 flex items-center text-sm text-blue-500 hover:underline"
+
                             >
                                 <LiaMapMarkedAltSolid className="ml-4 w-12 h-12 hover:scale-125 ease-in-out transition-all duration-150"></LiaMapMarkedAltSolid>
                             </button>

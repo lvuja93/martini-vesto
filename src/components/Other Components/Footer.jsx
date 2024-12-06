@@ -10,7 +10,7 @@ const Footer = () => {
                 <nav className="flex flex-col md:flex-row justify-between items-center py-4 px-6 md:px-8 space-y-4 md:space-y-0">
                     <div className="flex flex-wrap justify-center md:justify-start space-x-6 ml-0 md:ml-8">
                         <a href="#" className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">O nama</a>
-                        <a href="#" className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Kontak</a>
+                        <a href="#" className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Kontakt</a>
                         <a href="#" className="hover:underline hover:text-[#f5821f] hover:cursor-pointer">Karijera</a>
                         <a href="#" className="hover:underline hover:text-[#f5821f] mt-2 md:mt-0 hover:cursor-pointer">Martini Vesto by Boško Jakovljević</a>
                     </div>

@@ -19,7 +19,7 @@ function EmailForm1() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://172.20.10.2:3004/send-email', {
+            const response = await fetch('http://localhost:3004/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -27,7 +27,7 @@ function EmailForm1() {
 
             if (response.ok) {
                 setShowToast(true);
-                setTimeout(() => setShowToast(false), 3000);
+                setTimeout(() => setShowToast(false), 7000);
 
                 setFormData({
                     name: '',

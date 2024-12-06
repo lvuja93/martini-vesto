@@ -39,7 +39,7 @@ function EmailForm() {
         };
 
         try {
-            const response = await fetch('http://172.20.10.2:3003/send-email', {
+            const response = await fetch('http://localhost:3003/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -47,7 +47,7 @@ function EmailForm() {
 
             if (response.ok) {
                 setShowToast(true);
-                setTimeout(() => setShowToast(false), 3000);
+                setTimeout(() => setShowToast(false), 7000);
 
                 setFormData({
                     name: '',
@@ -160,7 +160,7 @@ function EmailForm() {
             </button>
             {showToast && (
                 <Toast
-                    message="Poruka je poslata!"
+                    message="Upit za termin je poslat. Uskoro ćemo Vam se javiti!"
                     onClose={() => setShowToast(false)}
                 />
             )}

@@ -5,6 +5,7 @@ import coverPic1 from "../assets/Pariz/cover-pic1.jpg"
 import coverPic2 from "../assets/Pariz/cover-pic-2.jpg"
 import Mailer from "../components/Mailer Components/MailerFrontend"
 import tailor from "../assets/tailor-in-action-2.png"
+import testPic from "../assets/test.jpg"
 
 
 // Custom hook for media query handling
@@ -67,7 +68,7 @@ const Home = () => {
             <div className="relative bg-white w-full h-screen overflow-hidden">
                 {/* Video Background */}
                 <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover "
                     preload="metadata"
                     autoPlay
                     loop
@@ -102,13 +103,17 @@ const Home = () => {
             <div className="bg-white ">
                 <h1 className="text-5xl text-black  font-semibold my-12">REVIJA PARIZ 2024</h1>
             </div>
-            <div className="bg-white min-h-screen grid grid-cols-1 md:grid-cols-2 p-8 ">
+
+
+            <div className="bg-white min-h-screen grid grid-cols-1 md:grid-cols-2 p-8 z-50">
                 {/* Prva slika */}
                 <div className="flex flex-col justify-center items-center space-y-4 mb-4">
                     <img
                         src={coverPic1}
                         alt="Woman"
-                        className="object-cover w-full h-full max-h-[700px] max-w-[500px]"
+                        className="object-cover w-full h-full max-h-[700px] max-w-[500px]
+
+                       "
                     />
                     <a
                         href="#"
