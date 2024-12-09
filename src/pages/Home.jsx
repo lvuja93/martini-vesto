@@ -83,25 +83,20 @@ const Home = () => {
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col mb-28 items-center justify-end text-center text-white z-20">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-8">ZIMA 2025</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-8">FASHION WEEK</h1>
                     <div className="flex space-x-4 mx-4 md:mx-0">
-                        <a
-                            href="#"
-                            className="bg-white text-black py-4 px-8  rounded text-sm md:text-base font-semibold shadow-md hover:bg-[#f5821f] hover:text-white transition"
-                        >
-                            ŽENSKA KOLEKCIJA
-                        </a>
+
                         <a
                             href="#"
                             className="bg-white text-black py-4 px-8 rounded text-sm md:text-base font-semibold shadow-md hover:bg-[#f5821f] hover:text-white transition"
                         >
-                            MUŠKA KOLEKCIJA
+                            ISTRAŽI KOLEKCIJU
                         </a>
                     </div>
                 </div>
             </div>
             <div className="bg-white ">
-                <h1 className="text-5xl text-black  font-semibold my-12">REVIJA PARIZ 2024</h1>
+                <h1 className="text-5xl text-black  font-semibold my-12">by BOŠKO</h1>
             </div>
 
 
@@ -119,7 +114,7 @@ const Home = () => {
                         href="#"
                         className="text-black text-2xl font-semibold underline"
                     >
-                        Ženska revijska odela
+                        Proleće/Leto
                     </a>
                 </div>
 
@@ -135,7 +130,7 @@ const Home = () => {
                         href="#"
                         className="text-black text-2xl font-semibold underline"
                     >
-                        Muška revijska odela
+                        Jesen/Zima
                     </a>
                 </div>
 
