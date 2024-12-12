@@ -67,8 +67,7 @@ const Navbar = () => {
 
     const navigationItems = [
         { path: "/", name: "Početna" },
-        { path: "/gallery", name: "Muškarci" },
-        { path: "/gallery", name: "Žene" },
+
         { path: "/galerija", name: "Galerija" },
         { path: "/lokacija", name: "Lokacije" },
         { path: "/kontakt", name: "Kontakt" },
@@ -88,16 +87,7 @@ const Navbar = () => {
                         Početna
                     </Link>
                 </li>
-                <li>
-                    <Link to="/gallery" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
-                        Muškarci
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/videos" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
-                        Žene
-                    </Link>
-                </li>
+
                 <li>
                     <Link to="/galerija" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
                         Galerija
