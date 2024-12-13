@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import currentVideo1 from "../assets/cover.mp4";
 import currentVideo2 from "../assets/mobile-cover.mp4";
-import coverPic1 from "../assets/Pariz/cover-pic1.jpg"
-import coverPic2 from "../assets/Pariz/cover-pic-2.jpg"
+import coverPic1 from "../assets/Prolece-leto.jpg"
+import coverPic2 from "../assets/Jesen-zima.jpg"
 import Mailer from "../components/Mailer Components/MailerFrontend"
 import tailor from "../assets/tailor-in-action-2.png"
 import testPic from "../assets/test.jpg"
