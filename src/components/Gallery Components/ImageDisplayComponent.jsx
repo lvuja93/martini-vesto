@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Slider from "react-slick";
 import bg1 from "../../assets/BG April 2024/bfw10_77_11zon.jpg"
 import bg2 from "../../assets/BG April 2024/bfw20_78_11zon.jpg"
 import bg3 from "../../assets/BG April 2024/bfw22_79_11zon.jpg"
@@ -46,131 +45,58 @@ import mv2419 from "../../assets/mv-2024/bro228_43_11zon.jpg"
 import mv2420 from "../../assets/mv-2024/bro229_44_11zon.jpg"
 import mv2421 from "../../assets/mv-2024/bro235_45_11zon.jpg"
 
-
 const ImageDisplayComponent = () => {
   const [category, setCategory] = useState("all");
-  const [activeSlides, setActiveSlides] = useState({}); // Track the active slide for each slider
 
   const items = [
-    {
-      id: 1,
-      category: "beograd2024",
-      images: [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9],
-      description: "Zeleno odelo",
-      price: "7,990 RSD",
-    },
-    {
-      id: 2,
-      category: "malta2024",
-      images: [malta1, malta2, malta3, malta4, malta5, malta6, malta7, malta8, malta9, malta10, malta11, malta12, malta13, malta14, malta15],
-      description: "Braon odelo",
-      price: "6,590 RSD",
-    },
-    {
-      id: 3,
-      category: "mv2024",
-      images: [mv241, mv242, mv243, mv244, mv245, mv246, mv247, mv248, mv249, mv2410, mv2411, mv2412, mv2413, mv2414, mv2415, mv2416, mv2417, mv2418, mv2419, mv2420, mv2421],
-      description: "Crno odelo",
-      price: "2,750 RSD",
-    },
-    {
-      id: 4,
-      category: "sweaters",
-      images: [],
-      description: "Crno odelo",
-      price: "2,750 RSD",
-    },
-    {
-      id: 5,
-      category: "sweaters",
-      images: [],
-      description: "Crno odelo",
-      price: "2,750 RSD",
-    },
-    {
-      id: 6,
-      category: "sweaters",
-      images: [],
-      description: "Crno odelo",
-      price: "2,750 RSD",
-    },
-    {
-      id: 7,
-      category: "sweaters",
-      images: [],
-      description: "Crno odelo",
-      price: "2,750 RSD",
-    },
+    // Beograd 2024
+    { id: 1, category: "beograd2024", image: bg1, description: "Zeleno odelo", price: "7,990 RSD" },
+    { id: 2, category: "beograd2024", image: bg2, description: "Plavo odelo", price: "8,500 RSD" },
+    { id: 3, category: "beograd2024", image: bg3, description: "Crno odelo", price: "6,700 RSD" },
+    { id: 4, category: "beograd2024", image: bg4, description: "Belo odelo", price: "7,200 RSD" },
+    { id: 5, category: "beograd2024", image: bg5, description: "Sivo odelo", price: "7,800 RSD" },
+    { id: 6, category: "beograd2024", image: bg6, description: "Tamno zeleno odelo", price: "8,100 RSD" },
+    { id: 7, category: "beograd2024", image: bg7, description: "Svetlo plavo odelo", price: "6,900 RSD" },
+    { id: 8, category: "beograd2024", image: bg8, description: "Tamnije odelo", price: "7,500 RSD" },
+    { id: 9, category: "beograd2024", image: bg9, description: "Klasično odelo", price: "8,000 RSD" },
+  
+    // Malta 2024
+    { id: 10, category: "malta2024", image: malta1, description: "Braon odelo", price: "6,590 RSD" },
+    { id: 11, category: "malta2024", image: malta2, description: "Crveno odelo", price: "6,800 RSD" },
+    { id: 12, category: "malta2024", image: malta3, description: "Tamno braon odelo", price: "7,000 RSD" },
+    { id: 13, category: "malta2024", image: malta4, description: "Bež odelo", price: "6,400 RSD" },
+    { id: 14, category: "malta2024", image: malta5, description: "Ljubičasto odelo", price: "7,200 RSD" },
+    { id: 15, category: "malta2024", image: malta6, description: "Svetlo crveno odelo", price: "6,900 RSD" },
+    { id: 16, category: "malta2024", image: malta7, description: "Zlatno odelo", price: "8,100 RSD" },
+    { id: 17, category: "malta2024", image: malta8, description: "Bronz odelo", price: "7,700 RSD" },
+    { id: 18, category: "malta2024", image: malta9, description: "Tamnije braon odelo", price: "7,500 RSD" },
+    { id: 19, category: "malta2024", image: malta10, description: "Klasično bež odelo", price: "8,200 RSD" },
+    { id: 20, category: "malta2024", image: malta11, description: "Elegantno odelo", price: "7,900 RSD" },
+    { id: 21, category: "malta2024", image: malta12, description: "Formalno odelo", price: "8,000 RSD" },
+    { id: 22, category: "malta2024", image: malta13, description: "Svečano odelo", price: "8,500 RSD" },
+    { id: 23, category: "malta2024", image: malta14, description: "Prolećno odelo", price: "7,300 RSD" },
+    { id: 24, category: "malta2024", image: malta15, description: "Letnje odelo", price: "6,800 RSD" },
+  
+    // MV 2024
+    { id: 25, category: "mv2024", image: mv241, description: "Crno odelo", price: "2,750 RSD" },
+    { id: 26, category: "mv2024", image: mv242, description: "Belo odelo", price: "3,000 RSD" },
+    { id: 27, category: "mv2024", image: mv243, description: "Sivo odelo", price: "2,900 RSD" },
+    { id: 28, category: "mv2024", image: mv244, description: "Tamno crno odelo", price: "3,100 RSD" },
+    { id: 29, category: "mv2024", image: mv245, description: "Svetlo belo odelo", price: "3,200 RSD" },
+    { id: 30, category: "mv2024", image: mv246, description: "Zlatno odelo", price: "3,400 RSD" },
+    { id: 31, category: "mv2024", image: mv247, description: "Bronz odelo", price: "3,500 RSD" },
+    { id: 32, category: "mv2024", image: mv248, description: "Elegantno odelo", price: "3,800 RSD" },
+    { id: 33, category: "mv2024", image: mv249, description: "Formalno odelo", price: "3,900 RSD" },
+    { id: 34, category: "mv2024", image: mv2410, description: "Svečano odelo", price: "4,000 RSD" },
+    { id: 35, category: "mv2024", image: mv2411, description: "Prolećno odelo", price: "4,200 RSD" },
+    { id: 36, category: "mv2024", image: mv2412, description: "Letnje odelo", price: "4,300 RSD" },
+    { id: 37, category: "mv2024", image: mv2413, description: "Jesenje odelo", price: "4,500 RSD" },
+    { id: 38, category: "mv2024", image: mv2414, description: "Zimsko odelo", price: "4,700 RSD" },
   ];
 
   const filterCategory = (category) => {
     setCategory(category);
   };
-
-  const handleBeforeChange = (sliderId, _, next) => {
-    setActiveSlides((prev) => ({
-      ...prev,
-      [sliderId]: next,
-    }));
-  };
-
-  const createSettings = (item) => ({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    beforeChange: (_, next) => handleBeforeChange(item.id, _, next), // Update active slide for individual slider
-    customPaging: (i) => (
-      <div
-        className={`w-[31px] h-12 cursor-pointer rounded-md transition-transform duration-300 ${activeSlides[item.id] === i
-          ? "border-2 border-[#f5821f] transform scale-105 shadow-lg"
-          : "border-2 border-transparent"
-          }`}
-        style={{
-          margin: '0px -4px', // Add left and right margin to ensure proper spacing
-          boxSizing: 'border-box', // Ensure that padding is part of the width
-        }}
-      >
-        <img
-          src={item.images[i % item.images.length]}
-          alt={`Thumbnail ${i + 1}`}
-          className="w-full h-full object-cover rounded-md "
-          style={{
-            // display: 'block', // Ensure that the image takes full space
-            maxWidth: '100%', // Avoid overflow
-            height: '100%', // Ensure correct aspect ratio
-          }}
-        />
-      </div>
-    ),
-    dotsClass: "slick-dots flex justify-center gap-2 mt-4", // Reduce gap to adjust thumbnail spacing
-  });
-
-  function SampleNextArrow({ onClick }) {
-    return (
-      <div
-        onClick={onClick}
-        className="absolute top-1/2 right-7 transform -translate-y-1/2 w-12 h-12  opacity-0 group-hover:opacity-100 rounded-full flex justify-center items-center cursor-pointer z-10 transition-all duration-300 ease-in-out shadow-lg hidden md:flex"
-      >
-        <span className="text-[#f5821f] mb-1 text-5xl font-bold">{'>'}</span>
-      </div>
-    );
-  }
-
-  function SamplePrevArrow({ onClick }) {
-    return (
-      <div
-        onClick={onClick}
-        className="absolute top-1/2 left-7 transform -translate-y-1/2 w-12 h-12 opacity-0 group-hover:opacity-100 rounded-full flex justify-center items-center cursor-pointer z-10 transition-all duration-300 ease-in-out shadow-lg hidden md:flex"
-      >
-        <span className="text-[#f5821f] mb-1 text-5xl font-bold">{'<'}</span>
-      </div>
-    );
-  }
 
   return (
     <div className="p-6 pt-32">
@@ -189,37 +115,25 @@ const ImageDisplayComponent = () => {
         </button>
         <button
           className="px-4 py-2 bg-white border border-black text-black"
-          onClick={() => filterCategory("mv2024")}
+          onClick={() => filterCategory("all")}
         >
-          2024
-        </button>
-        <button
-          className="px-4 py-2 bg-white border border-black text-black"
-          onClick={() => filterCategory("coats")}
-        >
-          Arena 2024
+          All
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 min-h-[600px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 min-h-[600px] gap-6">
         {items
           .filter((item) => category === "all" || item.category === category)
           .map((item) => (
-            <div key={item.id} className="p-4 text-center text-black relative group">
-              <Slider {...createSettings(item)}>
-                {item.images.map((img, index) => (
-                  <div key={index}>
-                    <img
-                      src={img}
-                      alt={`${item.description} ${index}`}
-                      className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </Slider>
-              <div className="mt-14 text-xl font-bold">{item.description}</div>
-
+            <div key={item.id} className="p-4 text-center text-black">
+              <img
+                src={item.image}
+                alt={item.description}
+                className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto"
+                loading="lazy"
+              />
+              <div className="mt-4 text-xl font-bold">{item.description}</div>
+              <div className="text-lg text-gray-600">{item.price}</div>
             </div>
           ))}
       </div>
