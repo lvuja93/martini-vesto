@@ -83,7 +83,8 @@ const Home = () => {
 
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col mb-28 items-center justify-end text-center text-white z-20">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-8">FASHION WEEK</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-0">FASHION WEEK</h1>
+                    <h1 className="text-xl text-white  font-semibold mb-4">by BOŠKO</h1>
                     <div className="flex space-x-4 mx-4 md:mx-0">
 
                         <a
@@ -92,15 +93,15 @@ const Home = () => {
                         >
                             ISTRAŽI KOLEKCIJU
                         </a>
+
                     </div>
+
                 </div>
             </div>
-            <div className="bg-white ">
-                <h1 className="text-5xl text-black  font-semibold my-12">by BOŠKO</h1>
-            </div>
 
 
-            <div className="bg-white min-h-screen grid grid-cols-1 md:grid-cols-2 p-8 z-50">
+
+            <div className="bg-white min-h-screen grid grid-cols-1 md:grid-cols-2 p-8 z-50 mt-8">
                 {/* Prva slika */}
                 <div className="flex flex-col justify-center items-center space-y-4 mb-4">
                     <img
@@ -135,6 +136,9 @@ const Home = () => {
                 </div>
 
 
+            </div>
+            <div className="bg-white ">
+                <h1 className="text-5xl text-black  font-semibold my-12">Martini Vesto klasici</h1>
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black p-4">
                 <div className="flex flex-col lg:flex-row w-full max-w-6xl p-10 bg-white  shadow-md space-y-8 lg:space-y-0 lg:space-x-8">
