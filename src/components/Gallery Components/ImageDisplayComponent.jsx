@@ -158,7 +158,7 @@ const ImageDisplayComponent = () => {
 
   return (
     <div className="p-6 pt-32">
-      <div className="flex gap-4 flex-wrap mb-6">
+      <div className="flex justify-center gap-4 flex-wrap mb-6 ">
         <button
           className="px-4 py-2 bg-white border border-black text-black"
           onClick={() => filterCategory("beograd2024")}
@@ -193,7 +193,7 @@ const ImageDisplayComponent = () => {
           className="px-4 py-2 bg-white border border-black text-black"
           onClick={() => filterCategory("all")}
         >
-          All
+          Prikaži sve
         </button>
 
       </div>

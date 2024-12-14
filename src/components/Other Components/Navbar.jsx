@@ -83,23 +83,23 @@ const Navbar = () => {
             {/* Navigation items on the left */}
             <ul className="space-x-4 text-white  hidden md:flex absolute left-6">
                 <li>
-                    <Link to="/" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
+                    <Link to="/" className="text-lg font-bold  hover:text-[#f5821f] hover:decoration-[#f5821f]">
                         Početna
                     </Link>
                 </li>
 
                 <li>
-                    <Link to="/galerija" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
+                    <Link to="/galerija" className="text-lg font-bold  hover:text-[#f5821f] hover:decoration-[#f5821f]">
                         Galerija
                     </Link>
                 </li>
                 <li>
-                    <Link to="/lokacija" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
+                    <Link to="/lokacija" className="text-lg font-bold  hover:text-[#f5821f] hover:decoration-[#f5821f]">
                         Lokacije
                     </Link>
                 </li>
                 <li>
-                    <Link to="/kontakt" className="text-lg font-bold hover:underline hover:text-[#f5821f] hover:decoration-[#f5821f]">
+                    <Link to="/kontakt" className="text-lg font-bold  hover:text-[#f5821f] hover:decoration-[#f5821f]">
                         Kontakt
                     </Link>
                 </li>

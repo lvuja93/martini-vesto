@@ -9,6 +9,7 @@ import Location from './pages/Location';
 import Kontakt from './pages/Kontakt';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ClassicsGalleryContent from './components/Gallery Components/ClassicsGalleryContent';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='galerija' element={<Gallery />} />
           <Route path='lokacija' element={<Location />} />
           <Route path='kontakt' element={<Kontakt />} />
+          <Route path='classic galerija' element={<ClassicsGalleryContent />} />
 
         </Routes>
         <Footer />
