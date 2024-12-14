@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import LightGallery from "lightgallery/react";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
+
+
+
 import bg1 from "../../assets/BG April 2024/bfw10_77_11zon.jpg"
 import bg2 from "../../assets/BG April 2024/bfw20_78_11zon.jpg"
 import bg3 from "../../assets/BG April 2024/bfw22_79_11zon.jpg"
@@ -57,19 +66,19 @@ import mv2310 from "../../assets/mv-2023/mv67_23_11zon.jpg"
 import mv2311 from "../../assets/mv-2023/mv78_24_11zon.jpg"
 import mv2312 from "../../assets/mv-2023/mv89_25_11zon.jpg"
 import mv2313 from "../../assets/mv-2023/mv8_14_11zon.jpg"
-import mv221 from "../../assets/mv-2022/_DJT8710_Martini Vesto by Boško_48.jpg"
-import mv222 from "../../assets/mv-2022/_DJT8720_Martini Vesto by Boško_49.jpg"
-import mv223 from "../../assets/mv-2022/_DJT8757_Martini Vesto by Boško_50.jpg"
-import mv224 from "../../assets/mv-2022/_DJT8781_Martini Vesto by Boško_51.jpg"
-import mv225 from "../../assets/mv-2022/_DJT8812_Martini Vesto by Boško_52.jpg"
-import mv226 from "../../assets/mv-2022/_DJT8836_Martini Vesto by Boško_53.jpg"
-import mv227 from "../../assets/mv-2022/_DJT8864_Martini Vesto by Boško_54.jpg"
-import mv228 from "../../assets/mv-2022/_DJT8879_Martini Vesto by Boško_55.jpg"
-import mv229 from "../../assets/mv-2022/_DJT8964_Martini Vesto by Boško_56.jpg"
-import mv2210 from "../../assets/mv-2022/_DJT9313_Martini Vesto by Boško_57.jpg"
-import mv2211 from "../../assets/mv-2022/_DJT9381_Martini Vesto by Boško_58.jpg"
-import mv2212 from "../../assets/mv-2022/_DJT9450_Martini Vesto by Boško_59.jpg"
-import mv2213 from "../../assets/mv-2022/_DJT9560_Martini Vesto by Boško_60.jpg"
+// import mv221 from "../../assets/mv-2022/_DJT8710_Martini Vesto by Boško_48.jpg"
+// import mv222 from "../../assets/mv-2022/_DJT8720_Martini Vesto by Boško_49.jpg"
+// import mv223 from "../../assets/mv-2022/_DJT8757_Martini Vesto by Boško_50.jpg"
+// import mv224 from "../../assets/mv-2022/_DJT8781_Martini Vesto by Boško_51.jpg"
+// import mv225 from "../../assets/mv-2022/_DJT8812_Martini Vesto by Boško_52.jpg"
+// import mv226 from "../../assets/mv-2022/_DJT8836_Martini Vesto by Boško_53.jpg"
+// import mv227 from "../../assets/mv-2022/_DJT8864_Martini Vesto by Boško_54.jpg"
+// import mv228 from "../../assets/mv-2022/_DJT8879_Martini Vesto by Boško_55.jpg"
+// import mv229 from "../../assets/mv-2022/_DJT8964_Martini Vesto by Boško_56.jpg"
+// import mv2210 from "../../assets/mv-2022/_DJT9313_Martini Vesto by Boško_57.jpg"
+// import mv2211 from "../../assets/mv-2022/_DJT9381_Martini Vesto by Boško_58.jpg"
+// import mv2212 from "../../assets/mv-2022/_DJT9450_Martini Vesto by Boško_59.jpg"
+// import mv2213 from "../../assets/mv-2022/_DJT9560_Martini Vesto by Boško_60.jpg"
 
 const ImageDisplayComponent = () => {
   const [category, setCategory] = useState("all");
@@ -136,25 +145,33 @@ const ImageDisplayComponent = () => {
     { id: 51, category: "mv2023", image: mv2313, description: "Prolećno odelo", price: "4,200 RSD" },
 
     // MV 2022
-    { id: 52, category: "mv2022", image: mv221, description: "Crno odelo", price: "2,750 RSD" },
-    { id: 53, category: "mv2022", image: mv222, description: "Belo odelo", price: "3,000 RSD" },
-    { id: 54, category: "mv2022", image: mv223, description: "Sivo odelo", price: "2,900 RSD" },
-    { id: 55, category: "mv2022", image: mv224, description: "Tamno crno odelo", price: "3,100 RSD" },
-    { id: 56, category: "mv2022", image: mv225, description: "Svetlo belo odelo", price: "3,200 RSD" },
-    { id: 57, category: "mv2022", image: mv226, description: "Zlatno odelo", price: "3,400 RSD" },
-    { id: 58, category: "mv2022", image: mv227, description: "Bronz odelo", price: "3,500 RSD" },
-    { id: 59, category: "mv2022", image: mv228, description: "Elegantno odelo", price: "3,800 RSD" },
-    { id: 60, category: "mv2022", image: mv229, description: "Formalno odelo", price: "3,900 RSD" },
-    { id: 61, category: "mv2022", image: mv2210, description: "Svečano odelo", price: "4,000 RSD" },
-    { id: 62, category: "mv2022", image: mv2211, description: "Prolećno odelo", price: "4,200 RSD" },
-    { id: 63, category: "mv2022", image: mv2212, description: "Svečano odelo", price: "4,000 RSD" },
-    { id: 64, category: "mv2022", image: mv2213, description: "Prolećno odelo", price: "4,200 RSD" },
+    // { id: 52, category: "mv2022", image: mv221, description: "Crno odelo", price: "2,750 RSD" },
+    // { id: 53, category: "mv2022", image: mv222, description: "Belo odelo", price: "3,000 RSD" },
+    // { id: 54, category: "mv2022", image: mv223, description: "Sivo odelo", price: "2,900 RSD" },
+    // { id: 55, category: "mv2022", image: mv224, description: "Tamno crno odelo", price: "3,100 RSD" },
+    // { id: 56, category: "mv2022", image: mv225, description: "Svetlo belo odelo", price: "3,200 RSD" },
+    // { id: 57, category: "mv2022", image: mv226, description: "Zlatno odelo", price: "3,400 RSD" },
+    // { id: 58, category: "mv2022", image: mv227, description: "Bronz odelo", price: "3,500 RSD" },
+    // { id: 59, category: "mv2022", image: mv228, description: "Elegantno odelo", price: "3,800 RSD" },
+    // { id: 60, category: "mv2022", image: mv229, description: "Formalno odelo", price: "3,900 RSD" },
+    // { id: 61, category: "mv2022", image: mv2210, description: "Svečano odelo", price: "4,000 RSD" },
+    // { id: 62, category: "mv2022", image: mv2211, description: "Prolećno odelo", price: "4,200 RSD" },
+    // { id: 63, category: "mv2022", image: mv2212, description: "Svečano odelo", price: "4,000 RSD" },
+    // { id: 64, category: "mv2022", image: mv2213, description: "Prolećno odelo", price: "4,200 RSD" },
 
   ];
 
   const filterCategory = (category) => {
     setCategory(category);
   };
+
+  const dynamicEl = items
+  .filter((item) => category === "all" || item.category === category)
+  .map((item) => ({
+    src: item.image,
+    thumb: item.image,
+    subHtml: `<h4>${item.description}</h4><p>${item.price}</p>`,
+  }));
 
   return (
     <div className="p-6 pt-32">
@@ -198,21 +215,31 @@ const ImageDisplayComponent = () => {
 
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 min-h-[600px] gap-6">
+      <LightGallery
+        speed={500}
+        plugins={[lgThumbnail, lgZoom]}
+        closable={true}
+        elementClassNames="grid grid-cols-1 md:grid-cols-4 min-h-[600px] gap-6"
+      >
         {items
           .filter((item) => category === "all" || item.category === category)
           .map((item) => (
-            <div key={item.id} className="p-4 text-center text-black">
+            <a
+              key={item.id}
+              href={item.image}
+              className="block p-4 text-center text-black"
+              data-lg-size="1400-800"
+            >
               <img
                 src={item.image}
                 alt={item.description}
-                className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto"
+                className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto hover:scale-105 transition-all ease-in-out duration-300"
                 loading="lazy"
               />
-
-            </div>
+              <div className="mt-2">{item.description}</div>
+            </a>
           ))}
-      </div>
+      </LightGallery>
     </div>
   );
 };
