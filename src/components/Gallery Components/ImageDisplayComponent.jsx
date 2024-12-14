@@ -177,37 +177,61 @@ const ImageDisplayComponent = () => {
     <div className="p-6 pt-32">
       <div className="flex justify-center gap-4 flex-wrap mb-6 ">
         <button
-          className="px-4 py-2 bg-white border border-black text-black"
+          className={`px-4 py-2 border  ${
+                        category === "beograd2024"
+                          ? "border-[#f5821f] text-[#f5821f]"
+                          : "border-black text-black"
+                      }`}
           onClick={() => filterCategory("beograd2024")}
         >
           Beograd 2024
         </button>
         <button
-          className="px-4 py-2 bg-white border border-black text-black"
+          className={`px-4 py-2 border  ${
+                        category === "malta2024"
+                          ? "border-[#f5821f] text-[#f5821f]"
+                          : "border-black text-black"
+                      }`}
           onClick={() => filterCategory("malta2024")}
         >
           Malta 2024
         </button>
         <button
-          className="px-4 py-2 bg-white border border-black text-black"
+          className={`px-4 py-2 border  ${
+                        category === "mv2024"
+                          ? "border-[#f5821f] text-[#f5821f]"
+                          : "border-black text-black"
+                      }`}
           onClick={() => filterCategory("mv2024")}
         >
           2024
         </button>
         <button
-          className="px-4 py-2 bg-white border border-black text-black"
+          className={`px-4 py-2 border  ${
+                        category === "mv2023"
+                          ? "border-[#f5821f] text-[#f5821f]"
+                          : "border-black text-black"
+                      }`}
           onClick={() => filterCategory("mv2023")}
         >
           2023
         </button>
         <button
-          className="px-4 py-2 bg-white border border-black text-black"
+          className={`px-4 py-2 border  ${
+                        category === "mv2022"
+                          ? "border-[#f5821f] text-[#f5821f]"
+                          : "border-black text-black"
+                      }`}
           onClick={() => filterCategory("mv2022")}
         >
           2022
         </button>
         <button
-          className="px-4 py-2 bg-white border border-black text-black"
+          className={`px-4 py-2 border  ${
+                        category === "all"
+                          ? "border-[#f5821f] text-[#f5821f]"
+                          : "border-black text-black"
+                      }`}
           onClick={() => filterCategory("all")}
         >
           Prikaži sve
