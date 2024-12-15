@@ -10,12 +10,14 @@ import Kontakt from './pages/Kontakt';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClassicsGalleryContent from './components/Gallery Components/ClassicsGalleryContent';
+import ScrollToTop from './components/Other Components/ScrollToTop'
 
 
 function App() {
   return (
     <div className="App font-sans bg-white overflow-x-hidden">
       <BrowserRouter>
+      <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

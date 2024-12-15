@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
@@ -66,22 +66,24 @@ import mv2310 from "../../assets/mv-2023/mv67_23_11zon.jpg"
 import mv2311 from "../../assets/mv-2023/mv78_24_11zon.jpg"
 import mv2312 from "../../assets/mv-2023/mv89_25_11zon.jpg"
 import mv2313 from "../../assets/mv-2023/mv8_14_11zon.jpg"
-// import mv221 from "../../assets/mv-2022/_DJT8710_Martini Vesto by Boško_48.jpg"
-// import mv222 from "../../assets/mv-2022/_DJT8720_Martini Vesto by Boško_49.jpg"
-// import mv223 from "../../assets/mv-2022/_DJT8757_Martini Vesto by Boško_50.jpg"
-// import mv224 from "../../assets/mv-2022/_DJT8781_Martini Vesto by Boško_51.jpg"
-// import mv225 from "../../assets/mv-2022/_DJT8812_Martini Vesto by Boško_52.jpg"
-// import mv226 from "../../assets/mv-2022/_DJT8836_Martini Vesto by Boško_53.jpg"
-// import mv227 from "../../assets/mv-2022/_DJT8864_Martini Vesto by Boško_54.jpg"
-// import mv228 from "../../assets/mv-2022/_DJT8879_Martini Vesto by Boško_55.jpg"
-// import mv229 from "../../assets/mv-2022/_DJT8964_Martini Vesto by Boško_56.jpg"
-// import mv2210 from "../../assets/mv-2022/_DJT9313_Martini Vesto by Boško_57.jpg"
-// import mv2211 from "../../assets/mv-2022/_DJT9381_Martini Vesto by Boško_58.jpg"
-// import mv2212 from "../../assets/mv-2022/_DJT9450_Martini Vesto by Boško_59.jpg"
-// import mv2213 from "../../assets/mv-2022/_DJT9560_Martini Vesto by Boško_60.jpg"
+import mv221 from "../../assets/mv-2022/_DJT8710_Martini Vesto by Boško_48.jpg"
+import mv222 from "../../assets/mv-2022/_DJT8720_Martini Vesto by Boško_49.jpg"
+import mv223 from "../../assets/mv-2022/_DJT8757_Martini Vesto by Boško_50.jpg"
+import mv224 from "../../assets/mv-2022/_DJT8781_Martini Vesto by Boško_51.jpg"
+import mv225 from "../../assets/mv-2022/_DJT8812_Martini Vesto by Boško_52.jpg"
+import mv226 from "../../assets/mv-2022/_DJT8836_Martini Vesto by Boško_53.jpg"
+import mv227 from "../../assets/mv-2022/_DJT8864_Martini Vesto by Boško_54.jpg"
+import mv228 from "../../assets/mv-2022/_DJT8879_Martini Vesto by Boško_55.jpg"
+import mv229 from "../../assets/mv-2022/_DJT8964_Martini Vesto by Boško_56.jpg"
+import mv2210 from "../../assets/mv-2022/_DJT9313_Martini Vesto by Boško_57.jpg"
+import mv2211 from "../../assets/mv-2022/_DJT9381_Martini Vesto by Boško_58.jpg"
+import mv2212 from "../../assets/mv-2022/_DJT9450_Martini Vesto by Boško_59.jpg"
+import mv2213 from "../../assets/mv-2022/_DJT9560_Martini Vesto by Boško_60.jpg"
+import { FaArrowUp } from "react-icons/fa";
 
 const ImageDisplayComponent = () => {
   const [category, setCategory] = useState("all");
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   const items = [
     // Beograd 2024
@@ -145,25 +147,45 @@ const ImageDisplayComponent = () => {
     { id: 51, category: "mv2023", image: mv2313, description: "Prolećno odelo", price: "4,200 RSD" },
 
     // MV 2022
-    // { id: 52, category: "mv2022", image: mv221, description: "Crno odelo", price: "2,750 RSD" },
-    // { id: 53, category: "mv2022", image: mv222, description: "Belo odelo", price: "3,000 RSD" },
-    // { id: 54, category: "mv2022", image: mv223, description: "Sivo odelo", price: "2,900 RSD" },
-    // { id: 55, category: "mv2022", image: mv224, description: "Tamno crno odelo", price: "3,100 RSD" },
-    // { id: 56, category: "mv2022", image: mv225, description: "Svetlo belo odelo", price: "3,200 RSD" },
-    // { id: 57, category: "mv2022", image: mv226, description: "Zlatno odelo", price: "3,400 RSD" },
-    // { id: 58, category: "mv2022", image: mv227, description: "Bronz odelo", price: "3,500 RSD" },
-    // { id: 59, category: "mv2022", image: mv228, description: "Elegantno odelo", price: "3,800 RSD" },
-    // { id: 60, category: "mv2022", image: mv229, description: "Formalno odelo", price: "3,900 RSD" },
-    // { id: 61, category: "mv2022", image: mv2210, description: "Svečano odelo", price: "4,000 RSD" },
-    // { id: 62, category: "mv2022", image: mv2211, description: "Prolećno odelo", price: "4,200 RSD" },
-    // { id: 63, category: "mv2022", image: mv2212, description: "Svečano odelo", price: "4,000 RSD" },
-    // { id: 64, category: "mv2022", image: mv2213, description: "Prolećno odelo", price: "4,200 RSD" },
+    { id: 52, category: "mv2022", image: mv221, description: "Crno odelo", price: "2,750 RSD" },
+    { id: 53, category: "mv2022", image: mv222, description: "Belo odelo", price: "3,000 RSD" },
+    { id: 54, category: "mv2022", image: mv223, description: "Sivo odelo", price: "2,900 RSD" },
+    { id: 55, category: "mv2022", image: mv224, description: "Tamno crno odelo", price: "3,100 RSD" },
+    { id: 56, category: "mv2022", image: mv225, description: "Svetlo belo odelo", price: "3,200 RSD" },
+    { id: 57, category: "mv2022", image: mv226, description: "Zlatno odelo", price: "3,400 RSD" },
+    { id: 58, category: "mv2022", image: mv227, description: "Bronz odelo", price: "3,500 RSD" },
+    { id: 59, category: "mv2022", image: mv228, description: "Elegantno odelo", price: "3,800 RSD" },
+    { id: 60, category: "mv2022", image: mv229, description: "Formalno odelo", price: "3,900 RSD" },
+    { id: 61, category: "mv2022", image: mv2210, description: "Svečano odelo", price: "4,000 RSD" },
+    { id: 62, category: "mv2022", image: mv2211, description: "Prolećno odelo", price: "4,200 RSD" },
+    { id: 63, category: "mv2022", image: mv2212, description: "Svečano odelo", price: "4,000 RSD" },
+    { id: 64, category: "mv2022", image: mv2213, description: "Prolećno odelo", price: "4,200 RSD" },
 
   ];
 
   const filterCategory = (category) => {
     setCategory(category);
   };
+
+  // Show/hide scroll button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
 
   const dynamicEl = items
   .filter((item) => category === "all" || item.category === category)
@@ -257,13 +279,23 @@ const ImageDisplayComponent = () => {
               <img
                 src={item.image}
                 alt={item.description}
-                className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto hover:scale-105 transition-all ease-in-out duration-300"
+                className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto md:hover:scale-105 transition-all ease-in-out duration-300"
                 loading="lazy"
               />
               <div className="mt-2">{item.description}</div>
             </a>
           ))}
       </LightGallery>
+
+         {/* Scroll to Top Button */}
+         {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 md:bottom-14 right-4 z-50 bg-[#7D7D7D] text-white rounded-full border border-white p-3 shadow-lg transition duration-300 sm:block"
+        >
+          <FaArrowUp className="text-3xl" />
+        </button>
+      )}
     </div>
   );
 };
