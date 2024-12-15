@@ -1,4 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import LightGallery from "lightgallery/react";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
+
+
 import classic1 from "../../assets/classics/IMG_2160_1_11zon.jpeg"
 import classic2 from "../../assets/classics/IMG_2164_2_11zon.jpeg"
 import classic3 from "../../assets/classics/IMG_2167_3_11zon.jpeg"
@@ -23,7 +31,6 @@ import classic21 from "../../assets/classics/IMG_2432_21_11zon.jpeg"
 import classic22 from "../../assets/classics/IMG_2437_22_11zon.jpeg"
 
 const ClassicsGalleryComponent = () => {
-    const [category, setCategory] = useState("all");
 
     const items = [
         { id: 1, category: "beograd2024", image: classic1, description: "Zeleno odelo", price: "7,990 RSD" },
@@ -59,21 +66,34 @@ const ClassicsGalleryComponent = () => {
             </div>
 
             {/* Gallery */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 min-h-[600px] bg-white ">
-                {items
-
-                    .map((item) => (
-                        <div key={item.id} className="p-4 text-center text-black">
-                            <img
-                                src={item.image}
-                                alt={item.description}
-                                className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto"
-                                loading="lazy"
-                            />
-
-                        </div>
-                    ))}
-            </div>
+            {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-6 min-h-[600px] bg-white "> */}
+                
+               <LightGallery
+                    speed={500}
+                    plugins={[lgThumbnail, lgZoom]}
+                    closable={true}
+                    controls={true}
+                    mobileSettings={"showCloseIcon: false"}
+                    elementClassNames="grid grid-cols-1 md:grid-cols-4 min-h-[600px] gap-6 px-6"
+                    >
+                    {items.map((item) => (
+                                            <a
+                                key={item.id}
+                                href={item.image}
+                                className="block p-4 text-center text-black"
+                                data-lg-size="1400-800"
+                                >
+                                <img
+                                    src={item.image}
+                                    alt={item.description}
+                                    className="w-[400px] h-[500px] xl:w-auto md:h-auto object-cover mx-auto md:hover:scale-105 transition-all ease-in-out duration-300"
+                                    loading="lazy"
+                                />
+                                <div className="mt-2">{item.description}</div>
+                                </a>
+                        ))}
+                </LightGallery>      
+            {/* </div> */}
         </div>
     );
 };

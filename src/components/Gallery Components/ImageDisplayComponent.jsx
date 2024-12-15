@@ -265,6 +265,7 @@ const ImageDisplayComponent = () => {
         speed={500}
         plugins={[lgThumbnail, lgZoom]}
         closable={true}
+        mobileSettings={"showCloseIcon: false"}
         elementClassNames="grid grid-cols-1 md:grid-cols-4 min-h-[600px] gap-6"
       >
         {items
